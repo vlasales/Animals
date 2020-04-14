@@ -18,6 +18,15 @@ public class Animal extends Object {
         doma.add(minda);
         doma.add(rybicka);
         
+        Map<String, Animal> names = new HashMap<String, Animal>();
+        names.put("Azor", azor);
+        names.put("Minda", minda);
+        names.put("Doris", rybicka);
+        
+        String jmeno = "Azor";
+        System.out.println(names.get("Azor").hello());
+        System.out.println(names.get("Minda").hello());
+        
         Iterator<Animal> iter = doma.iterator();
         System.out.println();
         iter.next();
