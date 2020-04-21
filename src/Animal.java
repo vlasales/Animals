@@ -1,32 +1,52 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Animal extends Object {
 
-    static Animal azor = new Dog("Azor");
+    // static Animal azor = new Dog("Azor");
+    static Animal azor = null;
 
     public static void main(String []args) {
         System.out.println("Nazdar zvířata!");
-        System.out.println(azor.hello());
-
+        try {
+            System.out.println(azor);
+        } catch (NullPointerException e) {
+            System.out.println("Nastala chyba " + e.getMessage());
+        }
         Animal minda = new Cat("Minda");
         Animal rybicka = new Animal("Doris");
-
+        
         List<Animal> doma = new ArrayList<Animal>();
-        doma.add(azor);
+        try {
+            doma.add(azor);
+//        } catch (NullPointerException e) {
+//            System.out.println("Nastala chyba " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Nastala exception " + e.getMessage());
+        }
         doma.add(minda);
         doma.add(rybicka);
-        
+
         Map<String, Animal> names = new HashMap<String, Animal>();
-        names.put("Azor", azor);
+        try {
+            names.put("Azor", azor);
+        } catch (Exception e) {
+            System.out.println("Nastala exception " + e.getMessage());
+        }
         names.put("Minda", minda);
         names.put("Doris", rybicka);
         
-        String jmeno = "Azor";
-        System.out.println(names.get("Azor").hello());
+        try {
+            System.out.println(names.get("Azor").hello());
+        } catch (NullPointerException e) {
+            System.out.println("Azor: " + e);
+        } catch (Exception e) {
+            System.out.println("Azor " + e);
+        }
         System.out.println(names.get("Minda").hello());
-        
         Iterator<Animal> iter = doma.iterator();
         System.out.println();
         iter.next();
