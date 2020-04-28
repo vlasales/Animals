@@ -3,8 +3,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-public class Animal extends Object {
+public class Animal {
 
     // static Animal azor = new Dog("Azor");
     static Animal azor = null;
@@ -17,7 +19,8 @@ public class Animal extends Object {
             System.out.println("Nastala chyba " + e.getMessage());
         }
         Animal minda = new Cat("Minda");
-        Animal rybicka = new Animal("Doris");
+        Animal doris = new Animal("Doris", 1);
+        Animal korona = new Animal();
         
         List<Animal> doma = new ArrayList<Animal>();
         try {
@@ -28,7 +31,7 @@ public class Animal extends Object {
             System.out.println("Nastala exception " + e.getMessage());
         }
         doma.add(minda);
-        doma.add(rybicka);
+        doma.add(doris);
 
         Map<String, Animal> names = new HashMap<String, Animal>();
         try {
@@ -37,7 +40,7 @@ public class Animal extends Object {
             System.out.println("Nastala exception " + e.getMessage());
         }
         names.put("Minda", minda);
-        names.put("Doris", rybicka);
+        names.put("Doris", doris);
         
         try {
             System.out.println(names.get("Azor").hello());
@@ -63,9 +66,26 @@ public class Animal extends Object {
     }
 
     protected String name;
+    protected int age;
+
+    public Animal() {
+        System.out.print("Prázdný konstruktor: ");
+        BufferedReader br = new BufferedReader(
+            new InputStreamReader(System.in)
+        );
+        this.name = br.readLine();
+    }
 
     public Animal(String name) {
+        System.out.println("Krátký konstruktor: " + name);
         this.name = name;
+    }
+    
+    public Animal(String name, int age) {
+        System.out.println("Dlouhý konstruktor: " + name);
+        System.err.println("Error konstruktor: " + name);
+        this.name = name;
+        this.age = age;
     }
     
     String feed() {
