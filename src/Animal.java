@@ -18,9 +18,16 @@ public class Animal {
         } catch (NullPointerException e) {
             System.out.println("Nastala chyba " + e.getMessage());
         }
-        Animal minda = new Cat("Minda");
+        Animal minda = new Cat("Minda"); //immutability
         Animal doris = new Animal("Doris", 1);
         Animal korona = new Animal();
+        
+        minda.setName("Agáta");
+        // v tuhle chvíli si někdo přečte stav objektu
+        minda.setAge(5);
+        
+        System.out.println(minda.getName());
+        System.out.println(minda.name);
         
         List<Animal> doma = new ArrayList<Animal>();
         try {
@@ -73,7 +80,7 @@ public class Animal {
         BufferedReader br = new BufferedReader(
             new InputStreamReader(System.in)
         );
-        this.name = br.readLine();
+    //    this.name = br.readLine();
     }
 
     public Animal(String name) {
@@ -86,6 +93,14 @@ public class Animal {
         System.err.println("Error konstruktor: " + name);
         this.name = name;
         this.age = age;
+    }
+    
+    void setName(String name) {
+        this.name = name;
+    }
+    
+    String getName() {
+        return this.name;
     }
     
     String feed() {
