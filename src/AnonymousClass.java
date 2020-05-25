@@ -3,7 +3,7 @@ import java.util.TimerTask;
 
 class AnonymousClass extends TimerTask {
 
-    private long start;
+    long start;
 
     @Override
     public void run () {
