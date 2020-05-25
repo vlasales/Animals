@@ -5,11 +5,6 @@ class AnonymousClass extends TimerTask {
 
     private long start;
 
-    public void AnonymousClass (long start) {
-        super();
-        this.start = start;
-    }
-
     @Override
     public void run () {
         System.out.print("Task invoked: " +
@@ -19,9 +14,8 @@ class AnonymousClass extends TimerTask {
 
     public static void main() {
         Timer timer = new Timer("Timer");
-        long start = System.currentTimeMillis();
         TimerTask task = new AnonymousClass(start);
-
+        task.start = System.currentTimeMillis();
         long delay = 1000L;
         timer.schedule(task, delay);
         timer.cancel();
