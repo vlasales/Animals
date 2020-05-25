@@ -12,7 +12,6 @@ class AnonymousClass extends TimerTask {
         System.out.print("Task invoked: " +
             (System.currentTimeMillis() - start) + " ms");
         System.out.println(" - " + Thread.currentThread());
-        timer.cancel();
     }
 
     public static void main() {
@@ -22,5 +21,6 @@ class AnonymousClass extends TimerTask {
 
         long delay = 1000L;
         timer.schedule(task, delay);
+        timer.cancel();
     }
 }
