@@ -17,7 +17,7 @@
 	</target>
 
 	<target name="compile" depends="init" unless="skip.compile" description="compile the Java source code to class files">
-		<javac srcdir="src" destdir="build" classpathref="classpath" />
+		<javac srcdir="src" destdir="build" includeantruntime="false" classpathref="classpath" />
 	</target>
 
 </project>
