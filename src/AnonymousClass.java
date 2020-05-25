@@ -12,14 +12,10 @@ class AnonymousClass extends TimerTask {
         System.out.println(" - " + Thread.currentThread());
     }
 
-    void setStart(long start) {
-        this.start = start;
-    }
-
     public static void main() {
         Timer timer = new Timer("Timer");
-        TimerTask task = new AnonymousClass();
-        task.setStart(System.currentTimeMillis());
+        AnonymousClass task = new AnonymousClass();
+        task.start = System.currentTimeMillis();
         long delay = 1000L;
         timer.schedule(task, delay);
         timer.cancel();
