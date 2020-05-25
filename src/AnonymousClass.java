@@ -3,6 +3,8 @@ import java.util.TimerTask;
 
 class AnonymousClass extends TimerTask {
 
+    private long start;
+
     public void AnonymousClass (long start) {
         this.start = start;
     }
