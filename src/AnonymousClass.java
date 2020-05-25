@@ -6,6 +6,7 @@ class AnonymousClass extends TimerTask {
     private long start;
 
     public void AnonymousClass (long start) {
+        super();
         this.start = start;
     }
 
