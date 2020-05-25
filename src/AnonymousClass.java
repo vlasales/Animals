@@ -14,7 +14,7 @@ class AnonymousClass extends TimerTask {
 
     public static void main() {
         Timer timer = new Timer("Timer");
-        TimerTask task = new AnonymousClass(start);
+        TimerTask task = new AnonymousClass();
         task.start = System.currentTimeMillis();
         long delay = 1000L;
         timer.schedule(task, delay);
