@@ -22,20 +22,16 @@ public class Animal {
         Animal doris = new Animal("Doris", 1);
         Animal korona = new Animal();
         
-        minda.setName("Agáta");
-        // v tuhle chvíli si někdo přečte stav objektu
-        minda.setAge(5);
-        
         System.out.println(minda.getName());
         System.out.println(minda.name);
         
         List<Animal> doma = new ArrayList<Animal>();
         try {
             doma.add(azor);
-//        } catch (NullPointerException e) {
-//            System.out.println("Nastala chyba " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("Nastala chyba NullPointer:" + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Nastala exception " + e.getMessage());
+            System.out.println("Nastala exception: " + e.getMessage());
         }
         doma.add(minda);
         doma.add(doris);
