@@ -1,4 +1,4 @@
-class TimerTask@anonymous extends TimerTask {
+class AnonymousClass extends TimerTask {
     @Override
     public void run () {
         System.out.print("Task invoked: " +
@@ -10,6 +10,6 @@ class TimerTask@anonymous extends TimerTask {
 
 Timer timer = new Timer();
 long start = System.currentTimeMillis();
-TimerTask task = new TimerTas@anonymous();
+TimerTask task = new AnonymousClass();
 
 timer.schedule(task);
