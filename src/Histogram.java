@@ -4,8 +4,11 @@ public class Histogram{
 
     public static void main(String []args){
         Map<String, Integer> records = new HashMap<String, Integer>();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
+        try (
+            BufferedReader reader = new BufferedReader(
+                new FileReader(filename)
+                )
+            ) {
             while ((String line = reader.readLine()) != null) {
                 StringTokenizer tokenizer = new StringTokenizer( 
                    "Lets . practice, at. at GeeksforGeeks",
