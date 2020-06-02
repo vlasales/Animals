@@ -6,7 +6,7 @@ public class Histogram{
         Map<String, Integer> records = new HashMap<String, Integer>();
         try (
             BufferedReader reader = new BufferedReader(
-                new FileReader(filename)
+                new FileReader("vstup.txt")
                 )
             ) {
             while ((String line = reader.readLine()) != null) {
