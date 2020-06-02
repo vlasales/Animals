@@ -5,9 +5,7 @@ import java.io.IOException;
 
 public class WriteFileDemo {
 	public static void main(String[] args) {
-		File file = new File("myfile.txt");
-		file.createNewFile();
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("myfile.txt"))) {
 			String mycontent = "This String would be written" +
 				" to the specified File";
 			bw.write(mycontent);
