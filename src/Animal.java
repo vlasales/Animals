@@ -21,6 +21,7 @@ public class Animal {
         Animal minda = new Cat("Minda"); //immutability
         Animal doris = new Animal("Doris", 1);
         Animal korona = new Animal();
+        Animal liza = new Animal();
         
         System.out.println(minda.getName());
         System.out.println(minda.name);
